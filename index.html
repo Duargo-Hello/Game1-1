@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>RPG Tabuada</title>
+  <link rel="stylesheet" href="jogo.css"/>
+</head>
+<body>
+  <h1>⚔️ RPG da Tabuada</h1>
+
+  <div class="game">
+    <div class="stats">
+      <p>👤 Jogador - Vida: <span id="player-hp">100</span> | Nível: <span id="player-level">1</span></p>
+      <div class="bar-container"><div id="player-bar" class="bar"></div></div>
+
+      <p>👾 Monstro - Vida: <span id="monster-hp">100 / 100</span> | Nível: <span id="monster-level">1</span></p>
+      <div class="bar-container"><div id="monster-bar" class="bar"></div></div>
+
+      <p id="monster-name">Monstro Desconhecido</p>
+    </div>
+
+    <!-- IMAGEM DO MONSTRO -->
+    <img id="monster-image" src="imagens/monster1.png" alt="Monstro" width="200" />
+
+    <!-- HISTÓRIA DO MONSTRO -->
+    <p id="monster-story-text">Um monstro misterioso apareceu...</p>
+
+    <!-- PERGUNTA E RESPOSTA -->
+    <p id="question-text">Quanto é 2 × 3?</p>
+    <input type="number" id="answer" placeholder="Digite a resposta" />
+    <p id="question-result"></p>
+    <button onclick="checkAnswer()">Responder</button>
+    <button onclick="nextQuestion()">Pular Pergunta (-15 HP)</button>
+
+    <!-- RESULTADOS -->
+    <div class="victory" style="display: none;"><p id="victory-message"></p></div>
+    <div class="game-over" style="display: none;">
+      <p id="game-over-message"></p>
+      <button onclick="restartGame()">Reiniciar</button>
+    </div>
+  </div>
+
+  <script src="jogo.js"></script>
+</body>
+</html>
